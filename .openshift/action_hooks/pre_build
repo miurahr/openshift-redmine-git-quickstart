@@ -16,11 +16,8 @@ popd > /dev/null
 export OPENSHIFT_GIT_REPO_DIR="$OPENSHIFT_DATA_DIR/gitrepos/"
 mkdir -p $OPENSHIFT_GIT_REPO_DIR
 
-export GIT_PROJECT_OWNER=miurahr
-export GIT_PROJECT_NAME=swiftbook
-
 pushd "$OPENSHIFT_GIT_REPO_DIR" > /dev/null
-git clone --mirror git@github.com:$GIT_PROJECT_OWNER/$GIT_PROJECT_NAME.git
-cd $GIT_PROJECT_NAME
+git clone --mirror https://github.com/miurahr/swiftbook.git
+cd swiftbook.git
 git fetch -q --all -p
 popd > /dev/null
