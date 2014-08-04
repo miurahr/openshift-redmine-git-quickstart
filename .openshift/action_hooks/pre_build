@@ -17,7 +17,9 @@ export OPENSHIFT_GIT_REPO_DIR="$OPENSHIFT_DATA_DIR/gitrepos/"
 mkdir -p $OPENSHIFT_GIT_REPO_DIR
 
 pushd "$OPENSHIFT_GIT_REPO_DIR" > /dev/null
-git clone --mirror https://github.com/miurahr/swiftbook.git
+if [ ! -d swiftbook.git ]; then
+git clone --mirror https://USERNAME:PASSWORD@github.com/miurahr/swiftbook.git
 cd swiftbook.git
 git fetch -q --all -p
+fi
 popd > /dev/null
